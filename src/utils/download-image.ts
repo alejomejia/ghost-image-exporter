@@ -3,11 +3,19 @@ import * as fs from 'node:fs'
 
 import { env } from '@/config'
 
-import { EnvironmentVariablesError } from './errors'
+import { EnvironmentVariablesError, FetchError } from './errors'
 import { getLocalPathFromURL } from './get-local-path-from-url'
 import { GHOST_IMAGE_URL_PREFIX } from './const'
 
 const { GHOST_BASE_URL } = env
+
+/**
+ * Downloads a single image from a Ghost URL and saves it to the local filesystem
+ * @param {string} url - The URL of the image to download
+ * @returns {Promise<string>} The local file path if successful, undefined if local path cannot be determined
+ * @throws {EnvironmentVariablesError} If GHOST_BASE_URL environment variable is not set
+ * @throws {FetchError} If the image download fails
+ */
 
 async function downloadImage(url: string) {
   if (!GHOST_BASE_URL) {
@@ -31,11 +39,21 @@ async function downloadImage(url: string) {
     fs.writeFileSync(localPath, response.data)
 
     return localPath
-  } catch (error) {
-    console.error(`Error downloading image from ${url}:`, error.message)
-    return null
+  } catch {
+    throw new FetchError('Failed to download image.', {
+      parsedURL,
+      localPath
+    })
   }
 }
+
+/**
+ * Downloads multiple images from Ghost CMS URLs in parallel and saves them to the local filesystem
+ * @param {string[]} imageURLs - Array of image URLs to download
+ * @returns {Promise<string[]>} Array of successful download paths, excluding any failed downloads
+ * @throws {EnvironmentVariablesError} If GHOST_BASE_URL environment variable is not set
+ * @throws {FetchError} If any image download fails
+ */
 
 export async function downloadImages(imageURLs: string[]) {
   console.log('Starting image downloads...')
