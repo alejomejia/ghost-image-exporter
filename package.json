@@ -20,5 +20,8 @@
     "export"
   ],
   "author": "Alejandro Mejia <alejomejiacuartas@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
 }
