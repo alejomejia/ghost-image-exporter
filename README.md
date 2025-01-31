@@ -1,6 +1,6 @@
 # 🖼️ Ghost Image Exporter Tool
 
-A Node.js utility to download and organize images from a Ghost blog export file.
+A NodeJS utility to download and organize images from a Ghost blog export file.
 
 ## 📝 Description
 
@@ -40,9 +40,7 @@ Or
 $ yarn install
 ```
 
-3. Create a `.env` file in the root directory (optional):
-
-`GHOST_BASE_URL="https://y.x.com"`
+3. Create a `.env` file in the root directory (optional): `GHOST_BASE_URL="https://y.x.com"`
 
 4. Place your Ghost export file as `data.json` in the root directory
 
@@ -65,12 +63,12 @@ The tool will:
 
 The tool will create the following folder structure for your images, same as Ghost file structure:
 
-root
-└── .temp
-└──── content
-└────── images
-└──────── {year}
-└────────── {month}
+root  
+└── .temp  
+└──── content  
+└────── images  
+└──────── {year}  
+└────────── {month}  
 └──────────── {filename}
 
 ## 🤝 Contributing
