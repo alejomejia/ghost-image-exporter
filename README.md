@@ -10,6 +10,7 @@ This tool helps you migrate images from a Ghost blog by:
 - Extracting all image URLs from posts
 - Creating an organized folder structure
 - Downloading all images locally
+- Easy copy / paste folder structure to your Ghost instance
 
 ## 🚀 Getting Started
 
@@ -70,11 +71,3 @@ root
 └──────── {year}  
 └────────── {month}  
 └──────────── {filename}
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
