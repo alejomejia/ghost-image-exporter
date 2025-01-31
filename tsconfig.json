@@ -5,6 +5,8 @@
     "strict": true,
     "outDir": "dist",
     "rootDir": "src",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "paths": {
       "@/*": ["./src/*"]
     }
