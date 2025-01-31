@@ -1,4 +1,4 @@
-# 🖼️ Ghost Image Migration Tool
+# 🖼️ Ghost Image Exporter Tool
 
 A Node.js utility to download and organize images from a Ghost blog export file.
 
