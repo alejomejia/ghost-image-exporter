@@ -25,7 +25,7 @@ This tool helps you migrate images from a Ghost blog by:
 1. Clone this repository:
 
 ```bash
-$ git clone <repository-url>
+$ git clone https://github.com/alejomejia/ghost-image-exporter
 $ cd ghost-image-migration
 ```
 
@@ -41,7 +41,7 @@ Or
 $ yarn install
 ```
 
-3. Create a `.env` file in the root directory (optional): `GHOST_BASE_URL="https://y.x.com"`
+3. Create a `.env` file in the root directory: `GHOST_BASE_URL="https://y.x.com"`
 
 4. Place your Ghost export file as `data.json` in the root directory
 
@@ -71,3 +71,5 @@ root
 └──────── {year}  
 └────────── {month}  
 └──────────── {filename}
+
+Then you can copy / paste the folder with the images into the new Ghost installation.
