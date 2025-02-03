@@ -22,7 +22,7 @@ function getGhostImagesURLsFromHTML(posts: Post[]) {
   const srcTagRegex = /src=["']([^"']+)["']/gi
 
   return posts
-    .flatMap(({ html }) => html.match(imgTagRegex))
+    .flatMap(({ html }) => html?.match(imgTagRegex))
     .filter((img) => img?.includes(GHOST_IMAGE_URL_PREFIX))
     .flatMap((img) => img?.match(srcTagRegex))
     .map((src) => src?.split('"')[1]) as string[]

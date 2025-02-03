@@ -14,7 +14,7 @@ async function main() {
     // Create Ghost images folder structure
     createFolders(GHOST_IMAGES_FOLDER_STRUCTURE)
 
-    const posts = getPosts(ghostData as GhostExportRoot) // 325 posts
+    const posts = getPosts(ghostData as unknown as GhostExportRoot)
     const imageURLs = getImagesURLs(posts)
 
     // Create image folders
@@ -22,10 +22,8 @@ async function main() {
 
     // Download images and wait for completion
     await downloadImages(imageURLs)
-
-    process.exit(0)
-  } catch {
-    process.exit(1)
+  } catch (error) {
+    console.log(error)
   }
 }
 
