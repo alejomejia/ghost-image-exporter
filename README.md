@@ -26,7 +26,7 @@ This tool helps you migrate images from a Ghost blog by:
 
 ```bash
 $ git clone https://github.com/alejomejia/ghost-image-exporter
-$ cd ghost-image-migration
+$ cd ghost-image-exporter
 ```
 
 2. Install dependencies:
